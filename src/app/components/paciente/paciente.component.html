@@ -1,0 +1,31 @@
+<app-header color="light" titulo="Paciente"></app-header>
+
+<ion-content>
+
+    <ion-card *ngFor="let p of pacientes" (click)="info(p.paciente.cc)">
+        <ion-card-header>
+            <ion-card-subtitle>Cédula: {{p.paciente.cc}}</ion-card-subtitle>
+            <ion-card-title>Nombres: {{p.paciente.nombre}} {{p.paciente.apellidos}}</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content> Información
+            <p>
+                Género: {{p.paciente.genero}}
+                <br> Fecha de nacimiento: {{p.paciente.fechaNacimiento | date}}
+                <br> Número de tarjeta: {{p.paciente.tarjeta.codigo}} Relación: {{p.relacion}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+    <ion-buttons>
+        <ion-button class="btn btn-block" color="header" [routerLink]="['/inicio/registro-p']">
+            AGREGAR PACIENTE
+        </ion-button>
+    </ion-buttons>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="header" [routerLink]="['/inicio/registro-p']">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header no-border>
+    <ion-toolbar color="header">
+        <ion-buttons slot="start">
+            <ion-button color="light" (click)="toggleMenu()">
+                <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<app-menu></app-menu>
+
+<ion-content>
+    <ion-router-outlet id="content"></ion-router-outlet>
+</ion-content>

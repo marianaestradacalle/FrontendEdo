@@ -1,5 +1,7 @@
 {
   "name": "FrontendEdo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
