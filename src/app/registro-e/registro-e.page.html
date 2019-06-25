@@ -43,6 +43,7 @@
                 <ng-container *ngIf="nombreForm.invalid && (nombreForm.dirty || nombreForm.touched)">
                     <div class="error-message" *ngIf="nombreForm.errors.pattern">Solo se permiten letras</div>
                     <div class="error-message" *ngIf="nombreForm.errors.required">El nombre es requerido</div>
+                    <div class="error-message" *ngIf="nombreForm.errors.maxlength">Debe contener máximo 30 caracteres</div>
                     
                 </ng-container>
             </div>
@@ -56,6 +57,7 @@
                 <ng-container *ngIf="apellidoForm.invalid && (apellidoForm.dirty || apellidoForm.touched)">
                     <div class="error-message" *ngIf="apellidoForm.errors.pattern">Solo se permiten letras</div>
                     <div class="error-message" *ngIf="apellidoForm.errors.required">El apellido es requerido</div>
+                    <div class="error-message" *ngIf="apellidoForm.errors.maxlength">Debe contener máximo 30 caracteres</div>
                     
                 </ng-container>
             </div>
@@ -69,6 +71,8 @@
                 <ng-container *ngIf="telefonoForm.invalid && (telefonoForm.dirty || telefonoForm.touched)">
                     <div class="error-message" *ngIf="telefonoForm.errors.pattern">Solo se permiten números</div>
                     <div class="error-message" *ngIf="telefonoForm.errors.required">El número de celular es requerido</div>
+                    <div class="error-message" *ngIf="telefonoForm.errors.maxlength">Debe contener mínimo 10 números y
+                         máximo 15 números</div>
                     
                 </ng-container>
             </div>

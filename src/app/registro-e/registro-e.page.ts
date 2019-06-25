@@ -22,9 +22,9 @@ export class RegistroEPage implements OnInit {
 
     this.forma = new FormGroup({
       cc: new FormControl('', [Validators.required, Validators.pattern('[0-9]{8,10}'), Validators.maxLength(10), Validators.minLength(8)]),
-      nombre: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZÑñ ]{1,30}')]),
-      apellido: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZÑñ ]{1,30}')]),
-      telefono: new FormControl('', [Validators.required, Validators.pattern('[0-9]{10,15}')]),
+      nombre: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZÑñ ]{1,30}'), Validators.maxLength(1), Validators.minLength(30)]),
+      apellido: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZÑñ ]{1,30}'), Validators.maxLength(1), Validators.minLength(30)]),
+      telefono: new FormControl('', [Validators.required, Validators.pattern('[0-9]{10,15}'), Validators.maxLength(10), Validators.minLength(15)]),
       contrasena: new FormControl('', [Validators.required, Validators.maxLength(14),
       Validators.minLength(8),
       Validators.pattern('^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$'),

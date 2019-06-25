@@ -21,11 +21,11 @@ export class RegistroPComponent implements OnInit {
 
     this.forma = new FormGroup({
       cc: new FormControl('', [Validators.required, Validators.pattern('[0-9]{8,10}'), Validators.maxLength(10), Validators.minLength(8)]),
-      nombre: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZÑñ ]{1,30}')]),
-      apellidos: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZÑñ ]{1,30}')]),
-      genero: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]{1,10}')]),
+      nombre: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZÑñ ]{1,30}'),Validators.maxLength(30), Validators.minLength(1)]),
+      apellidos: new FormControl('', [Validators.required, Validators.pattern('[a-zA-ZÑñ ]{1,30}'),Validators.maxLength(30), Validators.minLength(1)]),
+      genero: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z]{1,10}'),Validators.maxLength(10), Validators.minLength(1)]),
       fechaNacimiento: new FormControl('', [Validators.required, this.fechaValidate]),
-      tarjeta: new FormControl('')
+      tarjeta: new FormControl('', [Validators.required])
     });
     console.log(this.forma);
   }
@@ -34,6 +34,7 @@ export class RegistroPComponent implements OnInit {
   get ccForm() { return this.forma.get('cc') }
   get nombreForm() { return this.forma.get('nombre') }
   get apellidoForm() { return this.forma.get('apellidos') }
+  get generoForm() { return this.forma.get('genero') }
   get fechaNForm() { return this.forma.get('fechaNacimiento') }
   get tarjetaForm() { return this.forma.get('tarjeta') }
 
