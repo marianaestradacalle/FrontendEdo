@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<ion-content padding>
+
+    <h1 style="text-align: center">REGISTRO PACIENTE</h1>
+    <div class="regis">
+        <form [formGroup]="forma" (ngSubmit)="registrarP(forma)">
+
+            <ion-item>
+                <ion-label position="floating">Ingrese su cédula</ion-label>
+                <ion-input type="text" formControlName="cc"></ion-input>
+            </ion-item>
+
+            <div class="validation-errors">
+                <ng-container *ngIf="ccForm.invalid && (ccForm.dirty || ccForm.touched)">
+                    <div class="error-message" *ngIf="ccForm.errors.pattern">Solo se permiten números</div>
+                    <div class="error-message" *ngIf="ccForm.errors.required">La cédula es requerida</div>
+                    <div class="error-message" *ngIf="ccForm.errors.maxlength">Debe contener máximo 10 números</div>
+                    <div class="error-message" *ngIf="ccForm.errors.minlength">Debe contener mínimo 8 números</div>
+                    
+                </ng-container>
+            </div>
+
+            <ion-item>
+                <ion-label position="floating">Ingrese su nombre</ion-label>
+                <ion-input type="text" formControlName="nombre"></ion-input>
+            </ion-item>
+
+            
+            <div class="validation-errors">
+                <ng-container *ngIf="nombreForm.invalid && (nombreForm.dirty || nombreForm.touched)">
+                    <div class="error-message" *ngIf="nombreForm.errors.pattern">Solo se permiten letras</div>
+                    <div class="error-message" *ngIf="nombreForm.errors.required">El nombre es requerido</div>
+                    
+                </ng-container>
+            </div>
+
+            <ion-item>
+                <ion-label position="floating">Ingrese sus apellidos</ion-label>
+                <ion-input type="text" formControlName="apellidos"></ion-input>
+            </ion-item>
+
+            
+            <div class="validation-errors">
+                <ng-container *ngIf="apellidoForm.invalid && (apellidoForm.dirty || apellidoForm.touched)">
+                    <div class="error-message" *ngIf="apellidoForm.errors.pattern">Solo se permiten letras</div>
+                    <div class="error-message" *ngIf="apellidoForm.errors.required">El apellido es requerido</div>
+                    
+                </ng-container>
+            </div>
+
+            <ion-item>
+                <ion-label position="floating">Ingrese su genero</ion-label>
+                <ion-input type="text" formControlName="genero"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-input type="date" formControlName="fechaNacimiento"></ion-input>
+            </ion-item>
+
+             
+            <div class="validation-errors">
+                <ng-container *ngIf="fechaNForm.invalid && (fechaNForm.dirty || fechaNForm.touched)">
+                    <div class="error-message" *ngIf="fechaNForm.errors.error">Por favor verifique la fecha</div>                    
+                </ng-container>
+            </div>
+
+            <ion-item>
+                <ion-label position="floating">Número de tarjeta</ion-label>
+                <ion-input type="text" formControlName="tarjeta"></ion-input>
+            </ion-item>
+
+
+            <ion-button expand="block" fill="outline" class="btnreg" color="header" type="submit">Registrar</ion-button>
+        </form>
+
+
+
+    </div>
+
+</ion-content>

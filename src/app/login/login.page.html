@@ -1,0 +1,22 @@
+<app-header [titulo]=" "></app-header>
+
+
+<ion-content padding>
+
+    <h1 style="text-align: center">INICIO DE SESIÓN</h1>
+
+    <div class="login">
+        <form [formGroup]="forma" (ngSubmit)="ingresar(forma)">
+            <ion-item>
+                <ion-input type="text" formControlName="cc" placeholder="Ingrese su cedula"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-input type="password" formControlName="contrasena" placeholder="Ingrese su contraseña"></ion-input>
+            </ion-item>
+
+            <ion-button class="btnlogin" color="header" type="submit">INICIAR SESIÓN</ion-button>
+        </form>
+    </div>
+
+</ion-content>
