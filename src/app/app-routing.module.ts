@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'registro-e', loadChildren: './registro-e/registro-e.module#RegistroEPageModule' },
   { path: 'inicio', loadChildren: './inicio/inicio.module#InicioPageModule' },
   { path: 'calendar', loadChildren: './calendar/calendar.module#CalendarPageModule' },
+  { path: 'registro-event', loadChildren: './registro-event/registro-event.module#RegistroEventPageModule' },
 ];
 
 @NgModule({

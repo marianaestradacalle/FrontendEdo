@@ -2,6 +2,7 @@ import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
+import { RegistroEventPage } from '../registro-event/registro-event.page';
 
 @Component({
   selector: 'app-calendar',
@@ -27,6 +28,8 @@ export class CalendarPage implements OnInit {
     mode: 'month',
     currentDate: new Date(),
   };
+
+  evento: RegistroEventPage;
 
   @ViewChild(CalendarComponent) myCal: CalendarComponent;
 

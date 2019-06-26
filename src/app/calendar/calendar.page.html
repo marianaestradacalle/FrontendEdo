@@ -12,7 +12,7 @@
 
 <ion-content>
 
-    <!-- Card for adding a new event -->
+    <!-- Card for adding a new event
     <ion-card>
         <ion-card-header tappable (click)="collapseCard = !collapseCard">
             <ion-card-title>Nuevo evento</ion-card-title>
@@ -40,7 +40,8 @@
             <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.Titulo == ''">Agregar evento</ion-button>
 
         </ion-card-content>
-    </ion-card>
+    </ion-card> -->
+
     <ion-row>
         <!-- Change the displayed calendar mode -->
         <ion-col size="4">
@@ -71,5 +72,11 @@
     <calendar [eventSource]="eventSource" [calendarMode]="calendar.mode" [currentDate]="calendar.currentDate" (onEventSelected)="onEventSelected($event)" (onTitleChanged)="onViewTitleChanged($event)" (onTimeSelected)="onTimeSelected($event)" startHour="6"
         endHour="20" step="30" startingDayWeek="1">
     </calendar>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="header" routerLink="/registro-event">
+        <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
 </ion-content>
