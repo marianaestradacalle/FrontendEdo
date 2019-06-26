@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'registro-e', loadChildren: './registro-e/registro-e.module#RegistroEPageModule' },
   { path: 'inicio', loadChildren: './inicio/inicio.module#InicioPageModule' },
-  { path: 'calendar', loadChildren: './calendar/calendar.module#CalendarPageModule' },
+  // { path: 'calendar', loadChildren: './calendar/calendar.module#CalendarPageModule' },
   { path: 'registro-event', loadChildren: './registro-event/registro-event.module#RegistroEventPageModule' },
 ];
 

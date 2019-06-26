@@ -15,6 +15,7 @@ import {SocketIoModule, SocketIoConfig} from 'ngx-socket-io';
 import {URL_API} from '../environments/environment';
 import {AlertsService} from './services/alerts.service';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { NgCalendarModule } from 'ionic2-calendar';
 
 const config: SocketIoConfig = {url: URL_API, options: {}};
 
@@ -32,7 +33,8 @@ ComponentsModule],
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AlertsService,
-    LocalNotifications
+    LocalNotifications,
+    NgCalendarModule,
   ],
   bootstrap: [AppComponent]
 })

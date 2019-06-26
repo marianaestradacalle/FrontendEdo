@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { datos } from '../../imagenes';
 
 @Component({
   selector: 'app-inicio',
@@ -8,7 +9,13 @@ import { MenuController } from '@ionic/angular';
 })
 export class InicioPage implements OnInit {
 
-  constructor(private menuCtrl: MenuController) { }
+  data = datos;
+  
+  constructor(private menuCtrl: MenuController) {
+
+    console.log(this.data);
+    
+   }
 
   ngOnInit() {
   }

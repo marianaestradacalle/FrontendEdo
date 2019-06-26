@@ -11,6 +11,10 @@ import { NosotrosComponent } from '../components/nosotros/nosotros.component';
 import { PacienteComponent } from '../components/paciente/paciente.component';
 import { RegistroPComponent } from '../components/registro-p/registro-p.component';
 import { InfoPacienteComponent } from '../components/info-paciente/info-paciente.component';
+import { TarjetasComponent } from '../components/tarjetas/tarjetas.component';
+import { CalendarPage } from '../calendar/calendar.page';
+import { NgCalendarModule } from 'ionic2-calendar';
+import { CalendarioComponent } from '../components/calendario/calendario.component';
 
 
 const routes: Routes = [
@@ -19,7 +23,11 @@ const routes: Routes = [
       { path: 'nosotros', component: NosotrosComponent },
       { path: 'paciente', component: PacienteComponent },
       { path: 'registro-p', component: RegistroPComponent },
-      { path: 'info-paciente/:id', component: InfoPacienteComponent }
+      { path: 'info-paciente/:id', component: InfoPacienteComponent },
+      { path: 'tarjetas', component: TarjetasComponent },
+      { path: 'calendar', component: CalendarioComponent},
+      { path: 'calendar', loadChildren: '../calendar/calendar.module#CalendarPageModule'},
+      // { path: '**', pathMatch: 'full', redirectTo: 'tarjetas' }
     ]}
 ];
 
@@ -29,8 +37,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ComponentsModule
+    ComponentsModule,
+    NgCalendarModule,
   ],
-  declarations: [InicioPage]
+  declarations: [InicioPage, CalendarioComponent]
 })
 export class InicioPageModule {}

@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  Opciones: Opcion[] = [{
+  Opciones: Opcion[] = [
+    {
+      icon: 'home',
+      titulo: 'Inicio',
+      redirectTo: '/inicio/tarjetas'
+  },
+  {
     icon: 'person',
     titulo: 'Paciente',
     redirectTo: '/inicio/paciente'
@@ -20,7 +26,7 @@ export class MenuComponent implements OnInit {
 {
   icon: 'calendar',
   titulo: 'Calendario',
-  redirectTo: '/calendar'
+  redirectTo: '/inicio/calendar'
 }
 ];
 
